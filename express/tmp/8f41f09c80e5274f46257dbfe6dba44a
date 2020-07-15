@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container1" 
+    style="border: 1px solid green;">
+    <button onclick="test()">click</button>
+    </div>
+    <div id="container2" style="border: 1px solid red;"></div>
+    <script>
+        function suiji() {
+            let a = document.createElement('div')
+            a.style = `height:${100+parseInt(Math.random()*200)}px;
+            width:auto;margin:5px`
+            a.style.backgroundColor = `rgb(
+                ${parseInt(Math.random()*255)},
+                ${parseInt(Math.random()*255)},
+                ${parseInt(Math.random()*255)})`
+            return a;
+        }
+        function test() {
+            let ct1 = document.getElementById('container1');
+            let ct2 = document.getElementById('container2');
+            console.dir(ct1)
+            if(ct1.clientHeight < ct2.clientHeight) {
+                ct1.appendChild(suiji())
+            } else {
+                ct2.appendChild(suiji())
+            }
+        }
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            position: relative;
+            width: 100%;
+        }
+        .test {
+            position: fixed;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 100%;
+        }
+        #container1 {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 49%;
+        }
+        #container2 {
+            position: absolute;
+            top: 5px;
+            left:51%;
+            width: 49%;
+        }
+    </style>
+</body>
+</html>

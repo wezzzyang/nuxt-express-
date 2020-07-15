@@ -1,0 +1,14 @@
+body,html {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+.page-enter-active, .page-leave-active {
+    transition: opacity .5s;
+  }
+  .page-enter, .page-leave-active {
+    opacity: 0;
+  }
+/* #00c58e green*/
+/* #7a6ac0 紫 */
+/* #5295ff 蓝 */
